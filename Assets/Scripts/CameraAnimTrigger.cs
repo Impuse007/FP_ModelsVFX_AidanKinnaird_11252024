@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class CameraAnimTrigger : MonoBehaviour
 {
-    public Button yourButton;      // Reference to the button
+    public Button optionsButton;     // Reference to the Options button
+    public Button backButton;        // Reference to the Back button
     public Animator cameraAnimator;  // Reference to the camera's Animator
 
     void Start()
@@ -13,16 +14,23 @@ public class CameraAnimTrigger : MonoBehaviour
         // Disable the Animator to prevent it from playing immediately
         cameraAnimator.enabled = false;
 
-        // Add listener for button click
-        yourButton.onClick.AddListener(TriggerCameraAnimation);
+        // Add listeners for button clicks
+        optionsButton.onClick.AddListener(PlayForwardAnimation);
+        backButton.onClick.AddListener(PlayReverseAnimation);
     }
 
-    void TriggerCameraAnimation()
-    {
-        // Enable the Animator just before triggering the animation
-        cameraAnimator.enabled = true;
 
-        // Set the trigger to start the animation
-        cameraAnimator.SetTrigger("PlayCameraMovement");
+
+    void PlayForwardAnimation()
+    {
+        //cameraAnimator.ResetTrigger("CameraAnim");
+        cameraAnimator.enabled = true;
+        cameraAnimator.SetTrigger("CameraAnim");
+    }
+
+    void PlayReverseAnimation()
+    {
+        cameraAnimator.enabled = true;
+        cameraAnimator.SetTrigger("CameraBack");
     }
 }

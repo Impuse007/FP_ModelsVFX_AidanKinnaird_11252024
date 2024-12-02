@@ -12597,7 +12597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6c3c9e7a76b9345bdd01159bf9a804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yourButton: {fileID: 1427085970}
+  optionsButton: {fileID: 1427085970}
+  backButton: {fileID: 769352777}
   cameraAnimator: {fileID: 330585548}
 --- !u!4 &1371985655
 Transform:
